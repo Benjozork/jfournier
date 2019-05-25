@@ -1,0 +1,27 @@
+{
+    "name": "jfournier",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "run": "npm run parcel-dev",
+        "deploy": "npm run parcel-bld && npm run deploy-upload",
+        "parcel-dev": "parcel ./site/index.html --log-level 4 --open",
+        "parcel-bld": "parcel build ./site/index.html --log-level 4",
+        "deploy-upload": "cd scripts && upload.bat %CD%\\dist\\ /var/www/html/"
+    },
+    "keywords": [],
+    "author": "Benjamin Dupont",
+    "license": "MIT",
+    "dependencies": {
+        "autoprefixer": "^9.5.1",
+        "parcel": "^1.12.3"
+    },
+    "devDependencies": {
+        "cssnano": "^4.1.10",
+        "postcss-modules": "^1.4.1",
+        "posthtml-include": "^1.2.0",
+        "sass": "^1.19.0",
+        "typescript": "^3.4.4"
+    }
+}

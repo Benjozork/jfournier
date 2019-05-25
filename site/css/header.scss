@@ -1,0 +1,128 @@
+@import "variables";
+
+#header-container {
+    position: fixed;
+    z-index: 200;
+
+    font-size: 15px;
+
+    background-color: $header-color;
+
+    width: 100%;
+
+    ul {
+        float: right;
+    }
+}
+
+// WIP banner
+
+#wip-banner {
+    text-align: center;
+    height: 2.5em;
+
+    background-color: #d5bc2f;
+
+    & > p {
+        display: inline;
+
+        vertical-align: middle;
+        line-height: 2.5em;
+    }
+}
+
+// Links
+
+#header-menu {
+    display: flex;
+
+    height: 10em;
+
+    padding: 0 1.5em;
+
+    align-items: center;
+    justify-content: right;
+
+    overflow: hidden;
+
+    transition: all ease-in-out 300ms;
+
+    #logo {
+        margin-right: auto;
+        transition: all ease-in-out 300ms;
+    }
+
+    .logo-social {
+        margin: 1.5em;
+    }
+}
+
+// Dropdown
+
+#dropdown {
+
+    display:         flex;
+    flex-direction:  row;
+    align-items:     center;
+
+    box-shadow: 0 7px 10px -10px rgba(0, 0, 0, 0.90);
+
+    & > div.dropdown-elem {
+
+        flex-grow: 1;
+        flex-basis: 0;
+
+        $height: 15em;
+
+        height: $height;
+
+        display: inline-block;
+
+        background-color: $background-color;
+
+        background-size: 70em;
+        background-position: -17.5em;
+
+        cursor: pointer;
+
+        text-align: center;
+        line-height: $height;
+
+        transition: transform 100ms linear;
+
+        &:hover {
+            transform: scaleY(1.05);
+
+            & > p {
+                transform: scaleY(0.9523);
+            }
+        }
+
+        & > p {
+            font-size: 22px;
+            font-weight: bold;
+
+            color: white;
+
+            z-index: 99;
+        }
+
+        &#elem-indiv {
+            background-image: url("../img/services/indiv.jpg");
+        }
+
+        &#elem-couple {
+            background-image: url("../img/services/couple.jpg");
+        }
+
+        &#elem-trans {
+            background-image: url("../img/services/trans.jpg");
+        }
+
+        &#elem-enligne {
+            background-image: url("../img/services/enligne.jpg");
+        }
+
+    }
+
+}
