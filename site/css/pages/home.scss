@@ -82,6 +82,7 @@
     grid-template-columns: 7fr 3fr;
     grid-template-rows: auto;
 
+    // ie grid fix
     -ms-grid-row: 2;
 
     & > div {
