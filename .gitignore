@@ -1,2 +1,8 @@
-*
-*.mapgit
+jfournier.iml
+package-lock.json
+dist
+lib
+.cache
+.idea
+scripts
+node_modules

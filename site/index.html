@@ -22,9 +22,6 @@
         <!-- Favicon -->
         <link rel="icon" href="img/favicon.png" />
 
-        <!-- CSS outdatedbrowser -->
-        <link rel="stylesheet" href="outdatedbrowser/outdatedbrowser.min.css">
-
         <!-- CSS slick -->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
@@ -309,40 +306,6 @@
             </div>
 
         </div>
-
-        <!-- outdated browser check -->
-        <div id="outdated"></div>
-
-        <!-- outdated browser script -->
-        <script src="outdatedbrowser/outdatedbrowser.min.js"></script>
-
-        <!-- outdated browser trigger -->
-        <script>
-            // Plain Javascript
-            //event listener: DOM ready
-            function addLoadEvent(func) {
-                var oldonload = window.onload;
-                if (typeof window.onload != 'function') {
-                    window.onload = func;
-                } else {
-                    window.onload = function() {
-                        if (oldonload) {
-                            oldonload();
-                        }
-                        func();
-                    }
-                }
-            }
-            //call plugin function after DOM ready
-            addLoadEvent(function(){
-                outdatedBrowser({
-                    bgColor: '#f25648',
-                    color: '#ffffff',
-                    lowerThan: 'object-fit',
-                    languagePath: 'outdatedbrowser/lang/fr.html'
-                })
-            });
-        </script>
 
     </body>
 
