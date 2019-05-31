@@ -1,0 +1,23 @@
+#header-container {
+    top: 0;
+}
+
+.mapouter {
+    margin-top: 11.75em;
+}
+
+.mapouter,
+.gmap_canvas,
+#gmap_canvas {
+    width: 100%;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 600px;
+}
+
+#gmap_canvas {
+    height: inherit;
+}
