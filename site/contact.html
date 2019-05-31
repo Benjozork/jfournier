@@ -8,7 +8,6 @@
     IntelliJ IDEA   - Copyright (c) 2019 JetBrains s.r.o       - Licensed under the Apache 2.0 license
     SlickJS         - Copyrig-ht (c) 2018 Ken Wheeler          - Licensed under the MIT license
     jQuery          - Copyright (c) 2019 The jQuery Foundation - Licensed under the MIT license
-    outdatedbroswer - Copyright (c) 2019 burokratik            - Licensed under the MIT license
     parcel          - Copyright (c) 2019 Parcel                - Licensed under the MIT license
     PostCSS         - Copyright (c) 2019 PostCSS               - Licensed under the MIT license
     Autoprefixer    - Copyright (c) 2019 PostCSS               - Licensed under the MIT license
@@ -21,9 +20,6 @@
 
         <!-- Favicon -->
         <link rel="icon" href="img/favicon.png" />
-
-        <!-- CSS outdatedbrowser -->
-        <link rel="stylesheet" href="outdatedbrowser/outdatedbrowser.min.css">
 
         <!-- CSS slick -->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -48,176 +44,142 @@
 
     <body onload="resizeFun()" onscroll="updateHeaderFromScroll()">
 
-    <div id="page-container">
+        <div id="page-container">
 
-        <link rel="stylesheet" type="text/css" href="css/header.scss" />
-        <div id="header-container">
+            <link rel="stylesheet" type="text/css" href="css/header.scss" />
+            <div id="header-container">
 
-            <div id="wip-banner">
-                <p>En construction, merci de votre patience!</p>
-            </div>
-
-            <div id="header-menu">
-                <img id="logo" src="img/logo.svg" width="500" alt="Logo" />
-
-                <!-- Navigation -->
-                <span id="link-home" class="link"><a href="./index.html">Accueil et présentation</a></span>
-                <span id="link-serv" class="link no-hover-transform"><a href="#">Services offerts</a></span>
-                <span id="link-sexo" class="link"><a href="#">La sexothérapie</a></span>
-                <span id="link-ress" class="link"><a href="#">Ressources et lectures</a></span>
-                <span id="link-cont" class="link"><a href="./contact.html">Contact</a></span>
-
-                <!-- Liens social -->
-                <img class="logo-social" src="img/twitter.svg" width="32"/>
-                <img class="logo-social" src="img/facebook.svg" width="32"/>
-
-            </div>
-
-            <div id="dropdown">
-
-                <div class="dropdown-elem" id="elem-indiv">
-                    <div class="elem-background"></div>
-                    <p>Thérapie individuelle</p>
+                <div id="wip-banner">
+                    <p>En construction, merci de votre patience!</p>
                 </div>
 
-                <div class="dropdown-elem" id="elem-couple">
-                    <div class="elem-background"></div>
-                    <p>Thérapie de couple</p>
+                <div id="header-menu">
+                    <img id="logo" src="img/logo.svg" width="500" alt="Logo" />
+
+                    <!-- Navigation -->
+                    <span id="link-home" class="link"><a href="./index.html">Accueil et présentation</a></span>
+                    <span id="link-serv" class="link no-hover-transform"><a href="#">Services offerts</a></span>
+                    <span id="link-sexo" class="link"><a href="#">La sexothérapie</a></span>
+                    <span id="link-ress" class="link"><a href="#">Ressources et lectures</a></span>
+                    <span id="link-cont" class="link"><a href="./contact.html">Contact</a></span>
+
+                    <!-- Liens social -->
+                    <img class="logo-social" src="img/twitter.svg" width="32"/>
+                    <img class="logo-social" src="img/facebook.svg" width="32"/>
+
                 </div>
 
-                <div class="dropdown-elem" id="elem-trans">
-                    <div class="elem-background"></div>
-                    <p>Santé trans</p>
+                <div id="dropdown">
+
+                    <div class="dropdown-elem" id="elem-indiv">
+                        <div class="elem-background"></div>
+                        <p>Thérapie individuelle</p>
+                    </div>
+
+                    <div class="dropdown-elem" id="elem-couple">
+                        <div class="elem-background"></div>
+                        <p>Thérapie de couple</p>
+                    </div>
+
+                    <div class="dropdown-elem" id="elem-trans">
+                        <div class="elem-background"></div>
+                        <p>Santé trans</p>
+                    </div>
+
+                    <div class="dropdown-elem" id="elem-enligne">
+                        <div class="elem-background"></div>
+                        <p>Thérapie en ligne</p>
+                    </div>
+
                 </div>
 
-                <div class="dropdown-elem" id="elem-enligne">
-                    <div class="elem-background"></div>
-                    <p>Thérapie en ligne</p>
-                </div>
+                <!-- header js scripts -->
+                <script>
 
-            </div>
+                    // Header collapse
 
-            <!-- header js scripts -->
-            <script>
+                    var   header = document.getElementById("header-menu");
+                    var     logo = document.getElementById("logo");
+                    var initSize = header.clientHeight;
 
-                // Header collapse
+                    function updateHeaderFromScroll() {
 
-                var   header = document.getElementById("header-menu");
-                var     logo = document.getElementById("logo");
-                var initSize = header.clientHeight;
+                        var bodyScroll = document.scrollingElement.scrollTop;
 
-                function updateHeaderFromScroll() {
+                        if (bodyScroll > initSize / 2) {
+                            header.style.height = "7em";
+                            logo.style.height   = "425px";
+                        } else if (bodyScroll < initSize / 2) {
+                            header.style.height = "10em";
+                            logo.style.height   = "500px";
+                        }
 
-                    var bodyScroll = document.scrollingElement.scrollTop;
-
-                    if (bodyScroll > initSize / 2) {
-                        header.style.height = "7em";
-                        logo.style.height   = "425px";
-                    } else if (bodyScroll < initSize / 2) {
-                        header.style.height = "10em";
-                        logo.style.height   = "500px";
                     }
 
-                }
+                    // Dropdown
 
-                // Dropdown
+                    var dropdown        = $("#dropdown");
+                    var dropdownTrigger = $("#link-serv");
 
-                var dropdown        = $("#dropdown");
-                var dropdownTrigger = $("#link-serv");
+                    dropdownTrigger.mouseenter(expandDropdown);
 
-                dropdownTrigger.mouseenter(expandDropdown);
-
-                function expandDropdown() {
-                    dropdown.slideDown();
-                    setTimeout(collapseDropdown, 300);
-                }
-
-                function collapseDropdown() {
-                    if (!(dropdown.is("#dropdown:hover") || dropdownTrigger.is("#link-serv:hover"))) {
-                        dropdown.slideUp();
-                    } else {
+                    function expandDropdown() {
+                        dropdown.slideDown();
                         setTimeout(collapseDropdown, 300);
                     }
-                }
 
-                dropdown.hide();
-
-                // Tooltips
-
-                $(document).tooltip()
-            </script>
-
-        </div>
-
-        <link rel="stylesheet" type="text/css" href="css/pages/contact.scss" />
-        <div id="content-container">
-
-            <div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=%20Julie%20Fournier%20sexologue%20clinicienne%2C%20psychoth%C3%A9rapeute&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
-
-            a<br/>
-            a<br/>
-            a<br/>
-            a<br/>
-            a<br/>
-
-            <a href="tel:+1-450-967-1412">Appeler</a>
-
-
-        </div>
-
-        <link rel="stylesheet" type="text/css" href="css/footer.scss" />
-        <div id="footer-container">
-
-            <div id="footer-row1">
-                <span class="link"><a href="#">Plan du site</a></span>
-                <span class="link"><a href="#">Contact administration</a></span>
-                <span class="link"><a href="#">Statut</a></span>
-                <span class="link"><a href="#">Licenses logiciels utilisés</a></span>
-                <p>Version 270519-1405</p>
-            </div>
-
-            <div id="footer-row2">
-                <p id="infos-cpy">Copyirght &copy; 2019 Julie Fournier.</p>
-                <i id="icone-ssl" class="fas fa-lock"></i>
-                <p id="infos-ssl">Ce site utilise une connexion encryptée grâce à <a title="Let's Encrypt est une marque déposée du Internet Security Research Group. Tous droits réservés." href="https://letsencrypt.org/">Let's Encrypt &trade;</a></p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- outdated browser check -->
-    <div id="outdated"></div>
-
-    <!-- outdated browser script -->
-    <script src="outdatedbrowser/outdatedbrowser.min.js"></script>
-
-    <!-- outdated browser trigger -->
-    <script>
-        // Plain Javascript
-        //event listener: DOM ready
-        function addLoadEvent(func) {
-            var oldonload = window.onload;
-            if (typeof window.onload != 'function') {
-                window.onload = func;
-            } else {
-                window.onload = function() {
-                    if (oldonload) {
-                        oldonload();
+                    function collapseDropdown() {
+                        if (!(dropdown.is("#dropdown:hover") || dropdownTrigger.is("#link-serv:hover"))) {
+                            dropdown.slideUp();
+                        } else {
+                            setTimeout(collapseDropdown, 300);
+                        }
                     }
-                    func();
-                }
-            }
-        }
-        //call plugin function after DOM ready
-        addLoadEvent(function(){
-            outdatedBrowser({
-                bgColor: '#f25648',
-                color: '#ffffff',
-                lowerThan: 'object-fit',
-                languagePath: 'outdatedbrowser/lang/fr.html'
-            })
-        });
-    </script>
+
+                    dropdown.hide();
+
+                    // Tooltips
+
+                    $(document).tooltip()
+                </script>
+
+            </div>
+
+            <link rel="stylesheet" type="text/css" href="css/pages/contact.scss" />
+            <div id="content-container">
+
+                <div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=%20Julie%20Fournier%20sexologue%20clinicienne%2C%20psychoth%C3%A9rapeute&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
+
+                a<br/>
+                a<br/>
+                a<br/>
+                a<br/>
+                a<br/>
+
+                <a href="tel:+1-450-967-1412">Appeler</a>
+
+
+            </div>
+
+            <link rel="stylesheet" type="text/css" href="css/footer.scss" />
+            <div id="footer-container">
+
+                <div id="footer-row1">
+                    <span class="link"><a href="#">Plan du site</a></span>
+                    <span class="link"><a href="#">Contact administration</a></span>
+                    <span class="link"><a href="#">Statut</a></span>
+                    <span class="link"><a href="#">Licenses logiciels utilisés</a></span>
+                    <p>Version 270519-1405</p>
+                </div>
+
+                <div id="footer-row2">
+                    <p id="infos-cpy">Copyirght &copy; 2019 Julie Fournier.</p>
+                    <i id="icone-ssl" class="fas fa-lock"></i>
+                    <p id="infos-ssl">Ce site utilise une connexion encryptée grâce à <a title="Let's Encrypt est une marque déposée du Internet Security Research Group. Tous droits réservés." href="https://letsencrypt.org/">Let's Encrypt &trade;</a></p>
+                </div>
+            </div>
+
+        </div>
 
     </body>
 
