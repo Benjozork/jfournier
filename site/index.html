@@ -179,7 +179,10 @@
                     $("#images-container").slick({
                         arrows:    true,
                         prevArrow: '<button class="slide-arrow prev-arrow">&lt;</button>',
-                        nextArrow: '<button class="slide-arrow next-arrow">&gt;</button>'
+                        nextArrow: '<button class="slide-arrow next-arrow">&gt;</button>',
+                        centerMode: true,
+                        slidesToShow: 1,
+                        variableWidth: true
                     });
 
                     function resizeFun() {
