@@ -12,7 +12,7 @@
     align-items: center;
 
     padding: 5em;
-    @media ($breakpoint-footer-tablet) {
+    @media ($breakpoint-footer-desktop) {
         padding: 5em 5em 5em 40em;
     }
 
@@ -36,11 +36,13 @@
     display: flex;
 
     flex-direction: column;
+    align-items: stretch;
+
     @media ($breakpoint-footer-desktop) {
         flex-direction: row;
+        align-items: center;
     }
 
-    align-items: stretch;
 }
 
 #footer-row2 {
