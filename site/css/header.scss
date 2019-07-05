@@ -1,4 +1,5 @@
 @import "variables";
+@import "queries";
 
 #header-container {
     position: fixed;
@@ -36,6 +37,7 @@
 // Links
 
 #header-menu {
+
     display: flex;
 
     height: 10em;

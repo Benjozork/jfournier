@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../queries";
 
 #content-container {
     display: grid;
@@ -7,12 +8,11 @@
 }
 
 #images-container {
-    margin-top: 9em;
     grid-column: span 2;
 }
 
 .slick-slide {
-    width: 120em;
+    width: 100em;
 }
 
 .slide {
@@ -84,21 +84,20 @@
     border-radius: .4em;
 
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 1fr;
+    @media ($breakpoint-footer-desktop) {
+        grid-template-columns: 7fr 3fr;
+    }
+
     grid-template-rows: auto;
 
     // ie grid fix
     -ms-grid-row: 2;
 
     & > div {
-        padding: 1em 0;
-
-        &:nth-child(1) {
-            padding-left: 3em;
-        }
-
-        &:nth-child(2) {
-            padding-right: 2em;
+        padding: 1em 1em;
+        @media ($breakpoint-footer-desktop) {
+            padding: 1em 0;
         }
     }
 }
@@ -108,7 +107,15 @@
         margin-bottom: 1.5em;
         text-align: justify;
         float-displace: line;
+
+        // noinspection CssInvalidPropertyValue
+        clear: inline-end;
+        @media ($breakpoint-footer-tablet), ($breakpoint-footer-desktop) {
+            clear: none;
+        }
     }
+
+    @media ($breakpoint-footer-tablet), ($breakpoint-footer-desktop) { padding-left: 3em !important; }
 
     border-right: $border-color .05em solid;
 
@@ -136,6 +143,8 @@
 #sidebar-container {
     background-color: $background-color;
     border-radius: .4em;
+
+    @media ($breakpoint-footer-tablet) { padding-right: 2em; }
 
     padding-top: calc(63.6px + 1em) !important;
 
@@ -194,19 +203,39 @@
 
 }
 
-#tab-container > input,
-#tab-container section > div {
-    display: none;
-}
+// Tab code
 
-#tab-container nav ul {
-    padding: 0;
+#tab-container {
 
-    & li {
-        display: inline-block;
-        
-        & label {
-            font-size: 1.1em;
+    & > input,
+    section > div {
+        display: none;
+    }
+
+    nav {
+
+        margin-bottom: 1em;
+        @media ($breakpoint-footer-desktop) {
+            margin-bottom: 0;
+        }
+
+        ul {
+            display: flex;
+
+            justify-content: center;
+            @media ($breakpoint-footer-desktop) {
+                justify-content: left;
+            }
+
+            padding: 0;
+
+            & li {
+                display: inline-block;
+
+                & label {
+                    font-size: 1.1em;
+                }
+            }
         }
     }
 }

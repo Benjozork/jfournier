@@ -28,16 +28,13 @@
         <link rel="stylesheet" type="text/css" href="css/styles.scss" />
 
         <!-- FontAwesome -->
-        <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8952f4e895.js"></script>
+
+        <!-- jQuery -->
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-        <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.theme.min.css" />
-        <link rel="stylesheet" type="text/css" href="jquery-ui/jquery-ui.min.css" />
 
         <title>Julie Fournier</title>
     </head>
@@ -150,14 +147,66 @@
 
                 <div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=%20Julie%20Fournier%20sexologue%20clinicienne%2C%20psychoth%C3%A9rapeute&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div></div>
 
-                a<br/>
-                a<br/>
-                a<br/>
-                a<br/>
-                a<br/>
+                <div id="photo-container">
+                    <img src="https://placehold.it/600x500" />
+                </div>
 
-                <a href="tel:+1-450-967-1412">Appeler</a>
+                <div id="contact-container">
 
+                    <h1>Me contacter</h1>
+
+                    <div id="cards-container">
+
+                        <div class="card">
+                            <i class="fas fa-envelope fa-2x card-icon"></i>
+
+                            <div class="card-body">
+                                <span class="card-title">Par courriel</span>
+                                <span class="card-major">fournier.julie@goutlook.com</span>
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <i class="fas fa-phone fa-2x card-icon"></i>
+
+                            <div class="card-body">
+                                <span class="card-title">Par téléphone</span>
+                                <span class="card-major">+1 (450) 967-1412</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="form-container">
+
+                    <h1>Formulaire de contact</h1>
+
+                    <h3>Attention!</h3>
+                    <p>Ce formulaire n'est pas fonctionel pour le moment, car le site est encore en test. Si vous souhaitez effectuer une demande, envoyez un courriel a
+                        <a href="mailto:fournier.julie@outlook.com">fournier.julie@outlook.com</a>.</p>
+
+                    <form id="contact-form">
+                        <h3 id="title-contact-info">Informations de contact</h3>
+                        <input id="input-email" aria-describedby="title-contact-info" type="email" placeholder="Adresse courriel" />
+                        <input id="input-name"  aria-describedby="title-contact-info" type="text" placeholder="Nom" />
+
+                        <h3 id="title-message">Votre message</h3>
+                        <input id="input-subject" aria-describedby="title-message" type="text" placeholder="Sujet" />
+                        <textarea id="input-text" aria-describedby="title-message" placeholder="Corps du message..."></textarea>
+
+                        <h3 id="title-prefs">Préférences de contact</h3>
+                        <select id="select-contact-time">
+                            <option disabled selected hidden>Veuillez choisir une heure...</option>
+                            <option value="0">Avant-midi</option>
+                            <option value="1">Après-midi</option>
+                            <option value="2">Soir</option>
+                        </select>
+                    </form>
+
+                </div>
 
             </div>
 

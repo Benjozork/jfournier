@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700');
+
 @import "variables";
+@import "queries";
 
 // @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
 
@@ -11,6 +13,14 @@
     margin: 0;
     font-family: "Poppins", sans-serif;
     font-size: 13px;
+}
+
+a {
+    color: darken($accent-color, 20%);
+}
+
+#content-container {
+    margin-top: 12.5em;
 }
 
 .link {
@@ -27,14 +37,16 @@
     border-bottom: $accent-color 2px solid;
 
     &:nth-child(1) {
-        margin-left: 0;
+        @media ($breakpoint-footer-desktop) {
+            margin-left: 0;
+        }
     }
 
     &:hover {
         color: $accent-color !important;
 
         &:not(.no-hover-transform) {
-            transform: translateY(0.5em);
+            @media ($breakpoint-footer-desktop) { transform: translateY(0.5em); }
         }
     }
 
@@ -62,11 +74,21 @@ h2 {
     color: $text-color;
 
     font-weight: normal;
+    font-size: 1.1em;
 
     border-left: $accent-color 3px solid;
 
     padding: 0 0 0 .75em;
     margin: .5em 0;
+}
+
+h3 {
+    @extend h2;
+
+    font-size: 1.15em;
+
+    border: none;
+    padding: 0;
 }
 
 ul.custom-dec {
