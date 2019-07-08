@@ -1,0 +1,100 @@
+link(rel='stylesheet', type='text/css', href='css/header.scss')
+#header-container
+
+    #wip-banner
+        p En construction, merci de votre patience !
+
+    mixin link(linkTarget, linkName)
+        span#link-home.link
+            a(href!=linkTarget)
+                |  #{linkName}
+
+    #header-menu
+        img#logo-menu(src='img/logo.svg', alt='Logo', width='500')
+
+        // Navigation
+
+        +link('/index.pug', 'Accueil et présentation')
+
+        +link('/services.pug', 'Services offerts')
+
+        +link('/services.pug', 'La sexothérapie')
+
+        +link('/services.pug', 'Ressources et lectures')
+
+        +link('/contact.pug',  'Contact')
+
+        // Liens social
+        img.logo-social(src='img/twitter.svg', width='32')
+        img.logo-social(src='img/facebook.svg', width='32')
+
+    #header-dropdown
+        div#logo-dropdown-container
+            img#logo-dropdown(src='img/logo.svg', alt='Logo')
+
+        #header-dropdown-links
+
+            +link('/index.pug', 'Accueil et présentation')
+
+            +link('/services.pug', 'Services offerts')
+
+            +link('/services.pug', 'La sexothérapie')
+
+            +link('/services.pug', 'Ressources et lectures')
+
+            +link('/contact.pug',  'Contact')
+
+        div#buttons-container
+            button#button-dropdown-collapse(onclick='toggleHeaderDropdown()')
+                i.fas.fa-lg.fa-chevron-circle-up
+            button#button-dropdown-expand(onclick='toggleHeaderDropdown()')
+                    i.fas.fa-lg.fa-chevron-circle-down
+
+    // header js
+    script.
+        // Header collapse
+
+        let header = document.getElementById("header-menu");
+
+        let headerDropdownLinks = document.getElementById("header-dropdown-links")
+
+        let headerDropdownCollapseButton = document.getElementById("button-dropdown-collapse")
+        let headerDropdownExpandButton   = document.getElementById("button-dropdown-expand")
+
+        let logo = document.getElementById("logo-menu");
+
+        let initSize = header.clientHeight;
+
+        /**
+         * Updates the height of the header menu from the scrolling position
+         */
+        function updateHeaderFromScroll() {
+            let bodyScroll = document.scrollingElement.scrollTop;
+
+            if (header.style.display === 'none') return
+
+            if (bodyScroll > initSize / 2) {
+                header.style.height = "7em";
+                logo.style.height = "425px";
+            } else if (bodyScroll < initSize / 2) {
+                header.style.height = "10em";
+                logo.style.height = "500px";
+            }
+        }
+
+        /**
+         * Toggles the visibility of the header dropdown menu
+         */
+        function toggleHeaderDropdown() {
+            if (headerDropdownLinks.style.display === 'none') {
+                headerDropdownLinks.style.display = 'block'
+
+                headerDropdownCollapseButton.style.display = 'block'
+                headerDropdownExpandButton.style.display   = 'none'
+            } else {
+                headerDropdownLinks.style.display = 'none'
+
+                headerDropdownCollapseButton.style.display = 'none'
+                headerDropdownExpandButton.style.display = 'block'
+            }
+        }

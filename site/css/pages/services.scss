@@ -1,14 +1,29 @@
-@import "../../variables";
+@charset "UTF-8";
+
+@import "/css/variables";
+@import "/css/queries";
+
+// @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
 
 #content-container {
     background-color: $background-color;
 
     margin-top: 12.5em;
-    padding: 1em 15em;
+
+    padding: 3em 3em;
+    @media ($breakpoint-footer-desktop) {
+        padding: 1em 15em;
+    }
+
 
     .service-grid {
         display: grid;
-        grid-template: 1fr 1fr / 1fr 1fr;
+
+        grid-template-columns: 1fr;
+        @media ($breakpoint-footer-tablet) {
+            grid-template-columns: 1fr 1fr;
+        }
+
         grid-gap: 3em 2em;
 
         .service-container {

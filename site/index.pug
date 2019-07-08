@@ -1,0 +1,121 @@
+doctype html
+
+//
+  @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
+
+html(lang='fr')
+
+    include /includes/head
+
+    body(onload   = 'resizeFun(); toggleHeaderDropdown()',
+         onscroll = 'updateHeaderFromScroll()'
+     )
+
+        #page-container
+
+            include /includes/header
+
+            link(rel='stylesheet', type='text/css', href='css/pages/home.scss')
+            #content-container
+
+                // Slider
+                #images-container
+                    .slide
+                        img(src='img/slider/slider_indiv.jpg', alt='Thérapie individuelle')
+                        span.slide-caption Thérapie individuelle
+                    .slide
+                        img(src='img/slider/slider_couple.jpg', alt='Thérapie de couple')
+                        span.slide-caption Thérapie de couple
+                    .slide
+                        img(src='img/slider/slider_trans.jpg', alt='Santé transsexuelle')
+                        span.slide-caption Santé transsexuelle
+                    .slide
+                        img(src='img/slider/slider_enligne.jpg', alt='Thérapie en ligne')
+                        span.slide-caption Thérapie en ligne
+                script.
+                    $("#images-container").slick({
+                        arrows: true,
+                        prevArrow: '<button class="slide-arrow prev-arrow">&lt;</button>',
+                        nextArrow: '<button class="slide-arrow next-arrow">&gt;</button>',
+                        centerMode: true,
+                        slidesToShow: 1,
+                        variableWidth: true
+                    });
+                    function resizeFun() {
+                        $("#images-container").width(document.body.clientWidth);
+                    }
+                    $(window).resize(resizeFun).load(resizeFun);
+
+                #body-container
+
+                    #tab-container
+
+                        input#tab-1-r(type='radio', name='pct', checked='')
+                        input#tab-2-r(type='radio', name='pct')
+
+                        nav
+                            ul
+                                li.link.no-hover-transform.tab1
+                                    label(for='tab-1-r') Bienvenue
+                                li.link.no-hover-transform.tab2
+                                    label(for='tab-2-r') Parcours professionel
+
+                        section.tabs
+
+                            #tab-1
+
+                                img#photo(alt='Photo', src='/img/julie.jpg')
+                                p
+                                    | J'offre des services professionnels et confidentiels de sexothérapie et de psychothérapie. Je propose une démarche axée sur l’accompagnement dans votre mouvement vers un mieux-être et un retour vers soi.
+                                p
+                                    | J'aime le caractère unique de chaque personne et je mise beaucoup sur l'importance de créer un lien significatif. Ainsi, il est primordial pour moi de respecter le rythme, les idées, les craintes et les besoins de chaque personne. J'offre aussi un accueil très chaleureux qui démontre de la compréhension et de l'empathie.
+                                p
+                                    | En plus de services de sexothérapie et de psychothérapie offerts, je donne de la formation sur divers sujets et j'aime m'impliquer pour faire connaitre la sexologie et les dynamiques conjugales. Je rédige notamment un blogue que vous trouverez sur ce site internet et j'ai participé à des enregistrements à la télévision et à la radio. Je m'implique aussi auprès de mes collègues sexologues en étant représentante du comité d’aide à la pratique de l'Association des sexologues du Québec et en y exerçant aussi le rôle de secrétaire pour cette même association.
+                                p
+                                    | Je suis convaincue que ces rôles me permettent d'être plus efficace dans ma pratique et d'offrir des services de meilleure qualité. En étant impliquée de la sorte, je m'assure d'être à l'affut des différents enjeux, des problématiques et des avancées dans le domaine autant du point de vue de ceux qui offrent le service que de ceux qui en bénéficient.
+                                p
+                                    | N'hésitez surtout pas à me contacter pour tout autre renseignement ou pour convenir d'un rendez-vous!
+                                    img#signature(src='img/signature.svg')
+
+                                #logos
+
+                                    h1 Ordres professionnels
+
+                                    #logos-flex
+
+                                        #logo-opsq(title="Membre de l'Ordre professionnel des sexologues du Québec")
+                                            img#img-opsq(alt='OPSQ', src='img/logos/opsq.png')
+                                            span#desc-opsq Membre de l'Ordre professionnel des sexologues du Québec
+
+                                        #logo-uqam(title="Baccalauréat et maîtrise en psychologie à l'UQAM")
+                                            img#img-uqam(alt='UQAM', src='img/logos/uqam.png')
+                                            span#desc-uqam Baccalauréat et maîtrise en sexologie à l'UQAM
+
+                                        #logo-apq(title="Membre de l'Association des psychothérapeutes du Québec")
+                                            img#img-apq(alt='ASQ', src='img/logos/apq.png')
+                                            span#desc-opq Membre de l'Association des psychothérapeutes du Québec
+
+                                        #logo-asq(title="Membre de l'Association des sexologues du Québec")
+                                            img#img-asq(alt='ASQ', src='img/logos/asq.png')
+                                            span#desc-osq Membre de l'Association des sexologues du Québec
+
+                                        #logo-opo(title="Détentrice d'un permis de psychothérapeute décerné par l'Ordre des psychologues du Québec")
+                                            img#img-opo(alt='OPO', src='img/logos/opo.png')
+                                            span#desc-opo
+                                                | Détentrice d'un permis de psychothérapeute décerné par l'Ordre des psychologues du Québec
+
+                            #tab-2
+                                p
+                                    | Je pratique actuellement au privé à la clinique Servirplus située à Rosemère. Je suis membre de l'Ordre des sexologues du Québec, de l'Association des sexologues du Québec, de l’Association des psychothérapeutes du Québec et je détiens un permis de psychothérapeute décernée par l'Ordre des psychologues du Québec ainsi qu’un permis pour effectuer l'évaluation des troubles sexuels.
+                                p
+                                    | Je suis diplômée de l’UQAM où j’y ai complété un baccalauréat en sexologie ainsi qu’une maitrise en sexologie clinique. Durant ces études, j’ai notamment été auxiliaire d’enseignement pour des cours dispensés à la maitrise et au baccalauréat en sexologie. Ces cours étaient surtout axés sur la relation d’aide et la thérapie de couple. J’ai aussi eu la chance d’effectuer un stage au Centre de santé des femmes de Montréal et à la Clinique de sexologie de l’UQAM. Au début de ma pratique, j’ai aussi travaillé à la Clinique Laval et pour différents programmes d’aide aux employés tels que Physimed, Prosanté, Optima et CRESS. Finalement, j’ai eu l’immense plaisir de travailler à titre d’intervenante dans un centre d’hébergement pour des personnes ayant des troubles de santé mentale ou un retard intellectuel depuis près de 10 ans.
+
+                    #sidebar-container
+                        ul.custom-dec
+                            li Test 1
+                            li Test 2
+                            li Test 3
+                            li Test 4
+                            li Test 5
+
+            include /includes/foot

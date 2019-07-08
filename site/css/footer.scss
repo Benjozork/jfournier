@@ -1,5 +1,9 @@
-@import "variables";
-@import "queries";
+@charset "UTF-8";
+
+@import "/css/variables";
+@import "/css/queries";
+
+// @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
 
 #footer-container {
     grid-column: span 2;
@@ -12,7 +16,8 @@
     align-items: center;
 
     padding: 5em;
-    @media ($breakpoint-footer-desktop) {
+
+    @media ($breakpoint-footer-tablet) {
         padding: 5em 5em 5em 40em;
     }
 
@@ -43,6 +48,10 @@
         align-items: center;
     }
 
+    #version {
+        margin-left: auto;
+    }
+
 }
 
 #footer-row2 {
@@ -53,28 +62,25 @@
     display: flex;
 
     flex-direction: column;
-    @media ($breakpoint-footer-desktop) {
+    @media ($breakpoint-footer-tablet) {
         flex-direction: row;
     }
 
     align-items: center;
 
-}
-
-#footer-row1 p {
-    margin-left: auto;
-    @media ($breakpoint-footer-tablet) {
-        margin: auto;
+    #infos-cpy {
+        margin-right: auto;
     }
-}
 
-#icone-ssl {
-    font-size: 1em;
+    #infos-ssl {
+        display: flex;
 
-    margin-left:   auto;
-    margin-right: .75em;
+        #icone-ssl {
+            font-size: 1em;
 
-    @media ($breakpoint-footer-tablet) {
-        display: none;
+            margin-left:   auto;
+            margin-right: .75em;
+        }
     }
+
 }

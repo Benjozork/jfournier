@@ -1,0 +1,84 @@
+doctype html
+
+//
+    @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
+
+html(lang='fr')
+
+    include /includes/head
+
+    body(onload='resizeFun()', onscroll='updateHeaderFromScroll()')
+
+        #page-container
+
+            include /includes/header
+
+            link(rel='stylesheet', type='text/css', href='/css/pages/services.scss')
+            #content-container
+
+                .service-grid
+
+                    // indiv
+                    .service-container
+                        h1 Consultations en individuel
+                        p
+                            | Après une évaluation de la difficulté de l'individu, je l'amène à comprendre l'origine de
+                            | celle-ci et à trouver des moyens qui lui conviennent pour développer une sexualité saine
+                            | et satisfaisante ou pour atteindre un équilibre nécessaire dans diverses sphères de sa
+                            | vie. Mon approche est variée et j'utilise des techniques intégratives. Les rencontres sont
+                            | d'une durée de 50 minutes.
+
+                        .service-link-info
+                            p
+                                | Pour plus d'information au sujet des approches utilisées, consultez les liens
+                                | suivants:
+                            span.link.no-hover-transform
+                                a(href='http://associationdessexologues.com/sexotherapie-approche-cognitive-comportementale/') Sexothérapie selon l’approche cognitive-comportementale
+                            span.link.no-hover-transform
+                                a(href='http://associationdessexologues.com/sexotherapie-approche-existentielle/') Sexothérapie selon l’approche existentielle
+
+                    // couple
+                    .service-container
+                        h1 Consultations de couple
+                        p
+                            | Je considère le couple comme étant deux personnes qui unissent leur histoire personnelle
+                            | afin de créer une histoire commune. Mon approche nous amène donc à travailler la
+                            | manière dont les partenaires interagissent ensemble et avec moi, tout en ne perdant pas
+                            | de vue l'histoire personnelle de chacun et leur histoire de couple. Ensemble, nous ferons
+                            | plus que traiter des difficultés sexuelles, nous travaillerons à redéfinir votre couple.
+                            | J'ai de l’expérience en consultation auprès de couples hétérosexuels et homosexuels. Les
+                            | séances sont d'une durée de 50 minutes.
+
+                        .service-link-info
+                            p
+                                | Pour de plus amples renseignements quant à l’approche utilisée, consultez le lien
+                                | suivant:
+                            span.link.no-hover-transform
+                                a(href='http://associationdessexologues.com/sexotherapie-approche-systemique/') Sexothérapie selon l’approche systémique
+
+                    // enligne
+                    .service-container
+                        h1 Consultations en ligne
+                        p
+                            | Des consultations en ligne sont offertes pour les personnes qui ne peuvent se déplacer ou
+                            | pour les gens qui demeurent en région éloignée. La procédure comprend la prise de
+                            | rendez-vous, la signature du formulaire de consentement, la complétion d’informations
+                            | pour l’ouverture de dossier et l'ajout de contact par Skype. Le paiement des
+                            | séances s'effectue via virement Interac par courriel. Je vous ferai parvenir un document
+                            | expliquant la procédure lors de la prise de rendez-vous.
+
+                    // trans
+                    .service-container
+                        h1 Santé trans
+                        p
+                            | Selon les standards de soins de la WPATH les plus récents, je fais les évaluations et les
+                            | lettres de recommandation pour l’hormonothérapie, les chirurgies du torse et les
+                            | chirurgies de réassignation sexuelles. J’effectue aussi un suivi au besoin avec la personne
+                            | et ses proches si elle le désire.
+
+                        .service-link-info
+                            p À cet effet, je suis membre du réseau des alliés du Centre Sida Amitié:
+                            span.link.no-hover-transform
+                                a(href='https://www.centresidaamitie.com/') Centre Sida Amitié
+
+            include /includes/foot

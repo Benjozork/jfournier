@@ -1,0 +1,76 @@
+doctype html
+
+//
+  @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
+
+html(lang="fr")
+
+    include /includes/head
+
+    body(onload='resizeFun()', onscroll='updateHeaderFromScroll()')
+
+        #page-container
+
+            include /includes/header
+
+            link(rel='stylesheet' type='text/css' href='css/pages/contact.scss')
+            #content-container
+
+                div.mapouter
+                    .gmap_canvas
+                        iframe#gmap_canvas(src='https://maps.google.com/maps?q=%20Julie%20Fournier%20sexologue%20clinicienne%2C%20psychoth%C3%A9rapeute&t=&z=11&ie=UTF8&iwloc=&output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0')
+                        | Google Maps Generator by
+                        a(href='https://www.embedgooglemap.net') embedgooglemap.net
+
+                #photo-container
+                    img(src='https://placehold.it/600x500')
+
+                #contact-container
+
+                    h1 Me contacter
+                    #cards-container
+                        .card
+                            i.fas.fa-envelope.fa-2x.card-icon
+                            .card-body
+                                span.card-title Par courriel
+                                span.card-major fournier.julie@outlook.com
+                        .card
+                            i.fas.fa-phone.fa-2x.card-icon
+                            .card-body
+                                span.card-title Par t&eacute;l&eacute;phone
+                                span.card-major +1 (514) 835-1536
+
+                #form-container
+
+                    h1 Formulaire de contact
+
+                    h3 Attention!
+                    p
+                        | Ce formulaire n&apos;est pas fonctionel pour le moment, car le site est encore en test. Si vous souhaitez effectuer une demande, envoyez un courriel a
+                        a(href='mailto:fournier.julie@outlook.com') fournier.julie@outlook.com
+                        | .
+
+                    form#contact-form
+
+                        h3#title-contact-info
+                            | Informations de contact
+
+                        input#input-email(aria-describedby='title-contact-info' type='email' placeholder='Adresse courriel')
+                        input#input-name(aria-describedby='title-contact-info' type='text' placeholder='Nom')
+
+                        h3#title-message
+                            | Votre message
+
+                        input#input-subject(aria-describedby='title-message' type='text' placeholder='Sujet')
+                        textarea#input-text(aria-describedby='title-message' placeholder='Corps du message...')
+
+                        h3#title-prefs
+                            | Pr&eacute;f&eacute;rences de contact
+
+                        select#select-contact-time
+                            option(disabled='' selected='' hidden='') Veuillez choisir une heure...
+                            option(value='0') Avant-midi
+                            option(value='1') Apr&egrave;s-midi
+                            option(value='2') Soir
+
+                include /includes/foot
