@@ -11,7 +11,7 @@
     margin-top: 12.5em;
 
     padding: 3em 3em;
-    @media ($breakpoint-footer-desktop) {
+    @media ($breakpoint-desktop) {
         padding: 1em 15em;
     }
 
@@ -20,7 +20,7 @@
         display: grid;
 
         grid-template-columns: 1fr;
-        @media ($breakpoint-footer-tablet) {
+        @media ($breakpoint-tablet) {
             grid-template-columns: 1fr 1fr;
         }
 

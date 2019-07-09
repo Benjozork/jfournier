@@ -40,7 +40,7 @@ a {
     border-bottom: $accent-color 2px solid;
 
     &:nth-child(1) {
-        @media ($breakpoint-footer-desktop) {
+        @media ($breakpoint-desktop) {
             margin-left: 0;
         }
     }
@@ -49,7 +49,7 @@ a {
         color: $accent-color !important;
 
         &:not(.no-hover-transform) {
-            @media ($breakpoint-footer-desktop) { transform: translateY(0.5em); }
+            @media ($breakpoint-desktop) { transform: translateY(0.5em); }
         }
     }
 

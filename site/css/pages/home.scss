@@ -16,7 +16,7 @@
 }
 
 .slick-slide {
-    width: 100em;
+    width: 70em;
 }
 
 .slide {
@@ -89,7 +89,7 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    @media ($breakpoint-footer-desktop) {
+    @media ($breakpoint-desktop) {
         grid-template-columns: 7fr 3fr;
     }
 
@@ -100,7 +100,7 @@
 
     & > div {
         padding: 1em 1em;
-        @media ($breakpoint-footer-desktop) {
+        @media ($breakpoint-desktop) {
             padding: 1em 0;
         }
     }
@@ -114,12 +114,12 @@
 
         // noinspection CssInvalidPropertyValue
         clear: inline-end;
-        @media ($breakpoint-footer-tablet), ($breakpoint-footer-desktop) {
+        @media ($breakpoint-tablet), ($breakpoint-desktop) {
             clear: none;
         }
     }
 
-    @media ($breakpoint-footer-tablet), ($breakpoint-footer-desktop) { padding-left: 3em !important; }
+    @media ($breakpoint-tablet), ($breakpoint-desktop) { padding-left: 3em !important; }
 
     border-right: $border-color .05em solid;
 
@@ -150,7 +150,7 @@
     background-color: $background-color;
     border-radius: .4em;
 
-    @media ($breakpoint-footer-tablet) { padding-right: 2em; }
+    @media ($breakpoint-tablet) { padding-right: 2em; }
 
     padding-top: calc(63.6px + 1em) !important;
 
@@ -221,7 +221,7 @@
     nav {
 
         margin-bottom: 1em;
-        @media ($breakpoint-footer-desktop) {
+        @media ($breakpoint-desktop) {
             margin-bottom: 0;
         }
 
@@ -229,7 +229,7 @@
             display: flex;
 
             justify-content: center;
-            @media ($breakpoint-footer-desktop) {
+            @media ($breakpoint-desktop) {
                 justify-content: left;
             }
 

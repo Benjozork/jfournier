@@ -17,7 +17,7 @@
 
     padding: 5em;
 
-    @media ($breakpoint-footer-tablet) {
+    @media ($breakpoint-tablet) {
         padding: 5em 5em 5em 40em;
     }
 
@@ -43,7 +43,7 @@
     flex-direction: column;
     align-items: stretch;
 
-    @media ($breakpoint-footer-desktop) {
+    @media ($breakpoint-desktop) {
         flex-direction: row;
         align-items: center;
     }
@@ -62,7 +62,7 @@
     display: flex;
 
     flex-direction: column;
-    @media ($breakpoint-footer-tablet) {
+    @media ($breakpoint-tablet) {
         flex-direction: row;
     }
 
