@@ -29,10 +29,25 @@ link(rel='stylesheet', type='text/css', href='css/header.scss')
         img.logo-social(src='img/facebook.svg', width='32')
 
     #header-dropdown
-        div#logo-dropdown-container
-            img#logo-dropdown(src='img/logo.svg', alt='Logo')
+        div#logo-container
+            img#logo(src='img/logo.svg', alt='Logo')
 
-        #header-dropdown-links
+        div#buttons-container
+
+            a#button-facebook(href="https://www.facebook.com/julief01/", target="_blank")
+                i.fab.fa-lg.fa-facebook
+
+            a#button-twitter
+                i.fab.fa-lg.fa-twitter
+
+            button.button-menu#button-collapse(onclick='toggleHeaderDropdown()')
+                span Menu
+                i.fas.fa-lg.fa-chevron-circle-up
+            button.button-menu#button-expand(onclick='toggleHeaderDropdown()')
+                span Menu
+                i.fas.fa-lg.fa-chevron-circle-down
+
+        #links-container
 
             +link('/index.pug', 'Accueil et présentation')
 
@@ -44,24 +59,16 @@ link(rel='stylesheet', type='text/css', href='css/header.scss')
 
             +link('/contact.pug',  'Contact')
 
-        div#buttons-container
-            button#button-dropdown-collapse(onclick='toggleHeaderDropdown()')
-                span Navigation
-                i.fas.fa-lg.fa-chevron-circle-up
-            button#button-dropdown-expand(onclick='toggleHeaderDropdown()')
-                span Navigation
-                i.fas.fa-lg.fa-chevron-circle-down
-
     // header js
     script.
         // Header collapse
 
         let header = document.getElementById("header-menu");
 
-        let headerDropdownLinks = document.getElementById("header-dropdown-links")
+        let headerDropdownLinks = document.getElementById("links-container")
 
-        let headerDropdownCollapseButton = document.getElementById("button-dropdown-collapse")
-        let headerDropdownExpandButton   = document.getElementById("button-dropdown-expand")
+        let headerDropdownCollapseButton = document.getElementById("button-collapse")
+        let headerDropdownExpandButton   = document.getElementById("button-expand")
 
         let logo = document.getElementById("logo-menu");
 
