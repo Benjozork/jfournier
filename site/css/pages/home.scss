@@ -97,11 +97,16 @@
 
     // ie grid fix
     -ms-grid-row: 2;
+}
 
-    & > div {
-        padding: 1em 1em;
-        @media ($breakpoint-desktop) {
-            padding: 1em 0;
+@mixin adaptiveContainer($left) {
+    padding: 1em 1.5em;
+
+    @media ($breakpoint-tablet), ($breakpoint-desktop) {
+        @if $left {
+            padding-left: 3em;
+        } @else {
+            padding-right: 3em;
         }
     }
 }
@@ -110,16 +115,9 @@
     p {
         margin-bottom: 1.5em;
         text-align: justify;
-        float-displace: line;
-
-        // noinspection CssInvalidPropertyValue
-        clear: inline-end;
-        @media ($breakpoint-tablet), ($breakpoint-desktop) {
-            clear: none;
-        }
     }
 
-    @media ($breakpoint-tablet), ($breakpoint-desktop) { padding-left: 3em !important; }
+    @include adaptiveContainer(true);
 
     border-right: $border-color .05em solid;
 
@@ -128,10 +126,13 @@
 }
 
 #photo {
-    float: right;
-    margin-left: 2em;
-    margin-bottom: 2em;
-    margin-right: 2em;
+    display: block;
+    margin: auto auto 2em;
+    @media ($breakpoint-tablet) {
+        float: right;
+        margin-left:  2em;
+        margin-right: 2em;
+    }
 
     width: 225px;
 }
@@ -142,17 +143,22 @@
     vertical-align: top;
 
     position: relative;
-    left:   4em;
-    bottom: .75em;
+    left:     4em;
+    bottom:   .75em;
 }
 
 #sidebar-container {
-    background-color: $background-color;
+
     border-radius: .4em;
 
-    @media ($breakpoint-tablet) { padding-right: 2em; }
+    @include adaptiveContainer(false);
 
-    padding-top: calc(63.6px + 1em) !important;
+    background-color: $background-color;
+
+    & .card {
+        margin-left:  0;
+        margin-right: 0;
+    }
 
     // ie grid fix
     -ms-grid-column: 2;
@@ -169,7 +175,10 @@
     border-radius: 0.75em;
 
     padding: 1em;
-    margin-right: 2em;
+
+    @media ($breakpoint-desktop) {
+        margin-right: 2em;
+    }
 
     & div {
         width: 20em;
@@ -253,5 +262,7 @@
 }
 
 #tab-2 {
-    margin-right: 2em;
+    @media ($breakpoint-tablet) {
+        margin-right: 2em;
+    }
 }
