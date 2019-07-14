@@ -1,0 +1,22 @@
+doctype html
+
+//
+    @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
+
+html(lang='fr')
+
+    include /includes/head
+
+    body(onpageshow = 'resizeFun(); toggleHeaderDropdown();', onscroll = 'updateHeaderFromScroll();')
+
+        #page-container
+
+            include /includes/header
+
+            link(rel='stylesheet', type='text/css', href='/css/pages/sexotherapie.scss')
+            #content-container
+
+                i#message-icon.fas.fa-clock.fa-4x
+                p#message-text Le contenu de cette page arrivera bientôt !
+
+            include /includes/foot
