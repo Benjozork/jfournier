@@ -23,7 +23,27 @@ a {
 }
 
 #content-container {
-    margin-top: 12.5em;
+    margin-top: 10em;
+}
+
+@mixin adaptiveFullPageContainer {
+    padding: 1em 3em;
+
+    @media ($breakpoint-tablet), ($breakpoint-desktop) {
+        padding: 1em 15em;
+    }
+}
+
+@mixin adaptiveSplitContainer($left) {
+    padding: 1em 1.5em;
+
+    @media ($breakpoint-tablet), ($breakpoint-desktop) {
+        @if $left {
+            padding-left: 3em;
+        } @else {
+            padding-right: 3em;
+        }
+    }
 }
 
 .link {
@@ -141,10 +161,14 @@ h3 {
     padding: 0;
 }
 
-ul.custom-dec {
+ul:not(.no-dec) {
     list-style: none;
 
+    padding-left: 1em;
+
     & li {
+
+        margin: .25em 0;
 
         &:before {
             content: "\2022";
@@ -155,4 +179,14 @@ ul.custom-dec {
             color: darken($accent-color, 20);
         }
     }
+}
+
+p {
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+p.small {
+    font-size: .9em;
+    margin: .75em 0 .75em 2.5em;
 }

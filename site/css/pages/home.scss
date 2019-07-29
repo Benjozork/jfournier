@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+@import "/css/styles";
 @import "/css/variables";
 @import "/css/queries";
 
@@ -16,7 +17,10 @@
 }
 
 .slick-slide {
-    width: 70em;
+    width: 130vw;
+    @media ($breakpoint-tablet) {
+        width: 70vw;
+    }
 }
 
 .slide {
@@ -30,18 +34,34 @@
 }
 
 .slide-caption {
+
     position: absolute;
-    bottom: 35px;
-    left: 35px;
 
-    z-index: 100;
+    bottom: 0;
 
-    font-size: 2em;
+    display: inline-block;
+    padding: .3em 0;
+    width: 130vw;
 
     background-color: rgba(0, 0, 0, 0.33);
+
+    text-align: center;
+
+    @media ($breakpoint-tablet) {
+        width: unset;
+
+        bottom: 35px;
+        left: 35px;
+        text-align: left;
+
+        padding: .3em 1em;
+    }
+
+    z-index: 10000;
+
+    font-size: 1.5em;
     color: rgba(255, 255, 255, 0.66);
 
-    padding: .3em 1em;
 }
 
 .slide-arrow {
@@ -99,25 +119,8 @@
     -ms-grid-row: 2;
 }
 
-@mixin adaptiveContainer($left) {
-    padding: 1em 1.5em;
-
-    @media ($breakpoint-tablet), ($breakpoint-desktop) {
-        @if $left {
-            padding-left: 3em;
-        } @else {
-            padding-right: 3em;
-        }
-    }
-}
-
 #tab-container {
-    p {
-        margin-bottom: 1.5em;
-        text-align: justify;
-    }
-
-    @include adaptiveContainer(true);
+    @include adaptiveSplitContainer(true);
 
     border-right: $border-color .05em solid;
 
@@ -151,7 +154,7 @@
 
     border-radius: .4em;
 
-    @include adaptiveContainer(false);
+    @include adaptiveSplitContainer(false);
 
     background-color: $background-color;
 

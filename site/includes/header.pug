@@ -1,9 +1,6 @@
 link(rel='stylesheet', type='text/css', href='css/header.scss')
 #header-container
 
-    #wip-banner
-        p En construction, merci de votre patience !
-
     mixin link(linkTarget, linkName)
         span#link-home.link
             a(href!=linkTarget)
@@ -95,13 +92,19 @@ link(rel='stylesheet', type='text/css', href='css/header.scss')
          * Toggles the visibility of the header dropdown menu
          */
         function toggleHeaderDropdown() {
-            if (headerDropdownLinks.style.display === 'none') {
-                headerDropdownLinks.style.display = 'block'
+            if (headerDropdownLinks.classList.contains("collapsed")) {
+                $('#links-container').slideDown(200)
+
+                headerDropdownLinks.classList.remove("collapsed")
+                headerDropdownLinks.classList.add("expanded")
 
                 headerDropdownCollapseButton.style.display = 'block'
                 headerDropdownExpandButton.style.display   = 'none'
             } else {
-                headerDropdownLinks.style.display = 'none'
+                $('#links-container').slideUp(200)
+
+                headerDropdownLinks.classList.remove("expanded")
+                headerDropdownLinks.classList.add("collapsed")
 
                 headerDropdownCollapseButton.style.display = 'none'
                 headerDropdownExpandButton.style.display = 'block'
