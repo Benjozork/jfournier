@@ -23,7 +23,7 @@ html(lang="fr")
                         a(href='https://www.embedgooglemap.net') embedgooglemap.net
 
                 #photo-container
-                    img(src='https://placehold.it/600x500')
+                    img(src='/img/contact/clinique.jpg')
 
                 #contact-container
 
@@ -44,33 +44,28 @@ html(lang="fr")
 
                     h1 Formulaire de contact
 
-                    h3 Attention!
-                    p
-                        | Ce formulaire n&apos;est pas fonctionel pour le moment, car le site est encore en test. Si vous souhaitez effectuer une demande, envoyez un courriel à
-                        a(href='mailto:fournier.julie@outlook.com') fournier.julie@outlook.com
-                        | .
-
-                    form#contact-form
+                    form#contact-form(method="POST" action="https://mailthis.to/benjozorkfr@gmail.com")
 
                         h3#title-contact-info
                             | Informations de contact
 
-                        input#input-email(aria-describedby='title-contact-info' type='email' placeholder='Adresse courriel')
-                        input#input-name(aria-describedby='title-contact-info' type='text' placeholder='Nom')
+                        input#input-email(aria-describedby='title-contact-info' name="Courriel" type='email' placeholder='Adresse courriel')
+                        input#input-name(aria-describedby='title-contact-info' name="Nom" type='text' placeholder='Nom')
 
                         h3#title-message
                             | Votre message
 
-                        input#input-subject(aria-describedby='title-message' type='text' placeholder='Sujet')
-                        textarea#input-text(aria-describedby='title-message' placeholder='Corps du message...')
+                        input#input-subject(aria-describedby='title-message' name="Sujet" type='text' placeholder='Sujet')
+                        textarea#input-text(aria-describedby='title-message' name="Corps du message" placeholder='Corps du message...')
 
                         h3#title-prefs
-                            | Pr&eacute;f&eacute;rences de contact
+                            | Préférences de contact (par exemple: am, pm, après 6h)
 
-                        select#select-contact-time
-                            option(disabled selected hidden) Veuillez choisir une heure...
-                            option(value='0') Avant-midi
-                            option(value='1') Apr&egrave;s-midi
-                            option(value='2') Soir
+                        input#input-prefs(aria-describedby="title-prefs" name="Préférence de contact" placeholder="Heure désirée pour le contact")
 
-                include /includes/foot
+                        input(type="submit" value="Envoyer")
+
+                        input(type="hidden" name="_honeypot" value="")
+                        input(type="hidden" name="_confirmation" value="Merci ! Votre message à été envoyé.")
+
+            include /includes/foot

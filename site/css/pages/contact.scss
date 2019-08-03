@@ -22,67 +22,110 @@
 
 #gmap_canvas {
     height: inherit;
-    width: 100%;
 }
 
 // main grid
 
 #content-container {
-    display: grid;
+    @include adaptiveFullPageContainer;
 
-    @media (width > 700px) {
-        grid-template: 500px auto / 1fr 1fr;
+    display: grid;
+    grid-template: 350px auto / 1fr;
+
+    @media ($breakpoint-desktop) {
+        grid-template: auto / 1fr 1fr;
     }
+
 }
 
+#photo-container,
 #contact-container,
 #form-container {
     padding: 1em;
 }
 
-#cards-container {
-    display: grid;
+#photo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    @media (width > 1200px) {
-        grid-template-columns: 1fr 1fr;
+    & img {
+        width: 100%
+    }
+
+    padding: 1em 0 0;
+    @media ($breakpoint-desktop) {
+        padding: 0;
     }
 }
 
-#contact-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: .5em;
+#contact-container {
+    #cards-container {
+        display: grid;
 
-    h3{
-        grid-column: span 2;
-    }
-
-    input, textarea, select {
-        height: 3em;
-        box-sizing: border-box;
-
-        padding: 1em;
-
-        border: $border-color 1px solid;
-        border-radius: .5em;
-
-        color: $text-color;
-        background-color: $background-color;
-
-        &:focus:not(:invalid) {
-            border-color: $accent-color;
-            border-width: 2px;
-        }
-
-        &#input-text {
-            grid-column: span 2;
-            height: 10em;
+        @media (min-width: 1800px) {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
-    select {
-        padding-top: 0;
-        padding-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#form-container {
+
+    #contact-form {
+        display: grid;
+        grid-template: auto / 1fr;
+        grid-gap: .5em;
+
+        h3 {
+            @media ($breakpoint-tablet) { grid-column: span 2; }
+        }
+
+        input:not([type="button"]):not([type="submit"]), textarea, select {
+            height: 3em;
+            box-sizing: border-box;
+
+            padding: 1em;
+
+            border: $border-color 1px solid;
+            border-radius: .5em;
+
+            color: $text-color;
+            background-color: $background-color;
+
+            &:focus:not(:invalid) {
+                border-color: $accent-color;
+                border-width: 2px;
+            }
+
+            &#input-text {
+                @media ($breakpoint-tablet) { grid-column: span 2; }
+                height: 10em;
+            }
+        }
+
+        input[type="submit"] {
+            border: none; outline: none;
+
+            background-color: $accent-color;
+
+            cursor: pointer;
+
+            border-radius: .5em;
+
+            width: 60%;
+            height: 3em;
+
+            margin: 1em auto 0 auto;
+            @media ($breakpoint-tablet) {
+                margin: 0 0 0 auto;
+            }
+        }
+
     }
+
+    padding-bottom: 0;
+    padding-right: 0;
 }
