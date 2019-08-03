@@ -155,10 +155,17 @@ h2 {
 h3 {
     @extend h2;
 
-    font-size: 1.15em;
+    font-size: 1.2em;
 
     border: none;
     padding: 0;
+}
+
+h4 {
+    @extend h4;
+
+    font-size: 1.15em;
+    font-weight: normal;
 }
 
 ul:not(.no-dec) {
@@ -174,11 +181,42 @@ ul:not(.no-dec) {
             content: "\2022";
             display: inline-block;
             width: 1em;
+
             font-weight: bolder;
 
             color: darken($accent-color, 20);
         }
     }
+}
+
+ol {
+
+    &.small li::before {
+        font-size: 1em;
+    }
+
+    li {
+        counter-increment: list-counter;
+
+        list-style: none;
+
+        &::before {
+            content: counter(list-counter) ' .';
+
+            margin-right: .75em;
+
+            font-size: 1.2em;
+            font-weight: bold;
+
+            color: darken($accent-color, 15%);
+        }
+
+        h1, h2, h3, h4 {
+            display: inline-block;
+            margin-bottom: .5em;
+        }
+    }
+
 }
 
 p {
@@ -189,4 +227,8 @@ p {
 p.small {
     font-size: .9em;
     margin: .75em 0 .75em 2.5em;
+}
+
+span.bold {
+    font-weight: bold;
 }

@@ -7,21 +7,46 @@
 // @2019 Benjamin Dupont - benjamin.dupont.984(a commercial)gmail(point)com
 
 #content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    height: calc(100vh - 15em);
+    @include adaptiveFullPageContainer
 }
 
-#message-icon {
-    color: $accent-color;
-    margin-bottom: .2em;
+.blog-article {
+    background-color: $background-color;
+
+    padding: 2em 4em;
+
+    margin-bottom: 2em;
 }
 
-#message-text {
-    font-size: 1.2em;
-    text-align: center;
-    padding: 0 1em;
+.article-title {
+    font-size: 1.3em;
+}
+
+.blog-article > span {
+    display: inline-block;
+    font-size: 1.15em;
+    padding: .3em 0 .5em;
+}
+
+.article-categories-tag {
+    margin-left: .75em;
+    &::before {
+        content: '|';
+        margin-right: .75em;
+    }
+}
+
+.article-categories {
+    margin-left: .3em;
+
+    color: darken($accent-color, 20%);
+}
+
+.article-author {
+    color: darken($accent-color, 20%);
+}
+
+.article-body p {
+    font-size: 1.05em;
+    & span { font-size: 1em }
 }
