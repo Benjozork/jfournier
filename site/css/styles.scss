@@ -91,10 +91,19 @@ a {
     padding: .75em 0;
     margin: .5em;
 
-    display: flex;
-    flex-direction: row;
+    display:         flex;
+    flex-direction:  column;
+    @media ($breakpoint-phone) {
+        flex-direction: row;
+    }
+
     justify-content: start;
-    align-items: center;
+    align-items:     center;
+
+    text-align: center;
+    @media ($breakpoint-phone) {
+        text-align: left;
+    }
 
     .card-icon {
         padding: 0 1em;
@@ -235,4 +244,39 @@ p.small {
 
 span.bold {
     font-weight: bold;
+}
+
+.tab-container {
+
+    & > input,
+    section > div {
+        display: none;
+    }
+
+    nav {
+
+        margin-bottom: 1em;
+        @media ($breakpoint-desktop) {
+            margin-bottom: 0;
+        }
+
+        ul {
+            display: flex;
+
+            justify-content: center;
+            @media ($breakpoint-desktop) {
+                justify-content: left;
+            }
+
+            padding: 0;
+
+            & li {
+                display: inline-block;
+
+                & label {
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
 }

@@ -22,8 +22,8 @@ link(rel='stylesheet', type='text/css', href='css/header.scss')
         +link('/contact.pug',  'Contact')
 
         // Liens social
-        img.logo-social(src='img/twitter.svg', width='32')
-        img.logo-social(src='img/facebook.svg', width='32')
+        a.button-facebook(href="https://www.facebook.com/julief01/", target="_blank")
+            i.fab.fa-lg.fa-facebook
 
     #header-dropdown
         div#logo-container
@@ -31,11 +31,8 @@ link(rel='stylesheet', type='text/css', href='css/header.scss')
 
         div#buttons-container
 
-            a#button-facebook(href="https://www.facebook.com/julief01/", target="_blank")
+            a.button-facebook(href="https://www.facebook.com/julief01/", target="_blank")
                 i.fab.fa-lg.fa-facebook
-
-            a#button-twitter
-                i.fab.fa-lg.fa-twitter
 
             button.button-menu#button-collapse(onclick='toggleHeaderDropdown()')
                 span Menu

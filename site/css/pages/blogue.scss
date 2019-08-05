@@ -10,6 +10,14 @@
     @include adaptiveFullPageContainer
 }
 
+// Tab code
+
+#tab-1-r:checked ~ section #tab-1,
+#tab-2-r:checked ~ section #tab-2,
+#tab-3-r:checked ~ section #tab-3 {
+    display: block;
+}
+
 .blog-article {
     background-color: $background-color;
 

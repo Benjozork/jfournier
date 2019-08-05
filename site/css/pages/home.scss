@@ -223,39 +223,8 @@
 
 // Tab code
 
-#tab-container {
-
-    & > input,
-    section > div {
-        display: none;
-    }
-
-    nav {
-
-        margin-bottom: 1em;
-        @media ($breakpoint-desktop) {
-            margin-bottom: 0;
-        }
-
-        ul {
-            display: flex;
-
-            justify-content: center;
-            @media ($breakpoint-desktop) {
-                justify-content: left;
-            }
-
-            padding: 0;
-
-            & li {
-                display: inline-block;
-
-                & label {
-                    font-size: 1.1em;
-                }
-            }
-        }
-    }
+.tab-container {
+    @include adaptiveSplitContainer(true);
 }
 
 #tab-1-r:checked ~ section #tab-1,
