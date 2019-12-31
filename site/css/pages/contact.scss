@@ -76,12 +76,38 @@
 
     #contact-form {
         display: grid;
-        grid-template: auto / 1fr;
+        grid-template: 1fr / 1fr;
+        @media ($breakpoint-tablet) { grid-template-columns: 1fr 1fr; }
         grid-gap: .5em;
 
         h3 {
             @media ($breakpoint-tablet) { grid-column: span 2; }
         }
+
+        //noinspection CssInvalidHtmlTagReference
+        lt-mirror {
+            grid-area: unset;
+        }
+
+        //#title-contact-info {
+        //    grid-row: 1;
+        //    grid-column: span 2;
+        //}
+        //
+        //#title-message {
+        //    grid-row: 3;
+        //    grid-column: span 2;
+        //}
+        //
+        //#input-subject {
+        //    grid-row: 4;
+        //    grid-column: span 2;
+        //}
+        //
+        //#input-text {
+        //    grid-row: 5;
+        //    grid-column: span 2;
+        //}
 
         input:not([type="button"]):not([type="submit"]), textarea, select {
             height: 3em;
