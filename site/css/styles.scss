@@ -26,10 +26,13 @@ a {
 }
 
 #content-container {
-    @media (max-width: 1600px) {
-        margin-top: 10em;
+    @media (max-width: 900px) {
+        margin-top: 13em;
     }
-    margin-top: 9em;
+    @media (min-width: 900px) and (max-width: 1600px) {
+        margin-top: 12em;
+    }
+    margin-top: 12em;
 }
 
 @mixin adaptiveFullPageContainer {
