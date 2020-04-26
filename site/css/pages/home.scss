@@ -212,9 +212,7 @@
 #tab-1-r:checked ~ section #tab-1,
 #tab-2-r:checked ~ section #tab-2,
 #tab-3-r:checked ~ section #tab-3 {
-    visibility: unset;
-    width: initial;
-    height: initial;
+    display: grid !important;
 }
 
 // v2

@@ -254,11 +254,11 @@ span.bold {
 
 .tab-container {
 
-    & > input,
+    & > input {
+        display: none;
+    }
     section > div {
-        width: 0;
-        height: 0;
-        visibility: hidden;
+        display: none !important;
     }
 
     nav {
