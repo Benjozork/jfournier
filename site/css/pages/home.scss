@@ -128,28 +128,6 @@
     -ms-grid-row: 1;
 }
 
-#photo {
-    display: block;
-    margin: auto auto 2em;
-    @media ($breakpoint-tablet) {
-        float: right;
-        margin-left:  2em;
-        margin-right: 2em;
-    }
-
-    width: 225px;
-}
-
-#signature {
-    width: 12.5em;
-
-    vertical-align: top;
-
-    position: relative;
-    left:     4em;
-    bottom:   .75em;
-}
-
 #sidebar-container {
 
     border-radius: .4em;
@@ -225,12 +203,68 @@
 
 .tab-container {
     @include adaptiveSplitContainer(true);
+
+    li {
+        font-size: 1.05em;
+    }
 }
 
 #tab-1-r:checked ~ section #tab-1,
 #tab-2-r:checked ~ section #tab-2,
 #tab-3-r:checked ~ section #tab-3 {
-    display: block;
+    visibility: unset;
+    width: initial;
+    height: initial;
+}
+
+// v2
+#tab-1 {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-gap: 1.5em 3em;
+
+    @media ($breakpoint-tablet) {
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    #contenu {
+        #texte {
+            display: flex;
+            flex-direction: column;
+
+            #signature {
+                width: 12.5em;
+
+                margin-left: auto;
+            }
+        }
+    }
+
+    #photo {
+        width: 80%;
+
+        grid-row: 1;
+        justify-self: center;
+
+        @media ($breakpoint-tablet) {
+            width: 100%;
+
+            grid-row: unset;
+        }
+
+        border-radius: 1em;
+        box-shadow: 0 0 5px rgba(102, 102, 102, 0.4);
+    }
+
+    #logos {
+        @media ($breakpoint-tablet) {
+            grid-column: span 2;
+        }
+    }
+
 }
 
 #tab-2 {
