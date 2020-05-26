@@ -11,16 +11,13 @@
     "keywords": [],
     "author": "Benjamin Dupont",
     "license": "MIT",
-    "dependencies": {
+    "dependencies": {},
+    "devDependencies": {
         "@types/jquery": "^3.3.38",
         "@types/slick-carousel": "^1.6.34",
-        "http-server": "^0.11.1",
-        "jquery": "^3.4.1",
-        "parcel": "^1.12.3"
-    },
-    "devDependencies": {
         "autoprefixer": "^9.7.1",
         "cssnano": "^4.1.10",
+        "parcel": "^1.12.3",
         "postcss-modules": "^1.4.1",
         "posthtml-include": "^1.2.0",
         "pug": "^2.0.4",
