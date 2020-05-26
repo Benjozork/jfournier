@@ -1,13 +1,29 @@
 /* Copyirght (c) 2020 - Benjamin Dupont */
 
 // Initialiser le conteneur d'images
-$('#images-container').slick({
-    arrows: true,
-    prevArrow: '<button class="slide-arrow prev-arrow">&lt;</button>',
-    nextArrow: '<button class="slide-arrow next-arrow">&gt;</button>',
-    centerMode: true,
-    slidesToShow: 1,
-    variableWidth: true,
+import Swiper from "swiper";
+
+const SWIPER_MOBILE_SLIDES_PER_VIEW = 1;
+const SWIPER_LARGE_SLIDES_PER_VIEW = 1.5;
+
+new Swiper('#images-container', {
+    direction: 'horizontal',
+    navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next'
+    },
+    keyboard: true,
+    loop: true,
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    breakpoints: {
+        320: {
+            slidesPerView: SWIPER_MOBILE_SLIDES_PER_VIEW
+        },
+        740: {
+            slidesPerView: SWIPER_LARGE_SLIDES_PER_VIEW,
+        }
+    }
 });
 
 const header = document.getElementById("header-menu");

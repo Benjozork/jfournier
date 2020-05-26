@@ -16,20 +16,27 @@ html(lang='fr')
             link(rel='stylesheet', type='text/css', href='css/pages/home.scss')
             #content-container
 
-                // Slider
-                #images-container
-                    .slide
-                        img(src='img/slider/slider_indiv.jpg', alt='Thérapie individuelle')
-                        span.slide-caption Thérapie individuelle
-                    .slide
-                        img(src='img/slider/slider_couple.jpg', alt='Thérapie de couple')
-                        span.slide-caption Thérapie de couple
-                    .slide
-                        img(src='img/slider/slider_trans.jpg', alt='Santé trans')
-                        span.slide-caption Santé trans
-                    .slide
-                        img(src='img/slider/slider_enligne.jpg', alt='Thérapie en ligne')
-                        span.slide-caption Thérapie en ligne
+                .swiper-container#images-container
+                    .swiper-button-prev
+                    .swiper-button-next
+
+                    .swiper-wrapper
+                        .swiper-slide
+                            img(src='img/slider/slider_couple.jpg')
+                            span.swiper-caption
+                                | Thérapie de couple
+                        .swiper-slide
+                            img(src='img/slider/slider_enligne.jpg')
+                            span.swiper-caption
+                                | Thérapie en ligne
+                        .swiper-slide
+                            img(src='img/slider/slider_indiv.jpg')
+                            span.swiper-caption
+                                | Thérapie individuelle
+                        .swiper-slide
+                            img(src='img/slider/slider_trans.jpg')
+                            span.swiper-caption
+                                | Santé trans
 
                 #body-container
 
