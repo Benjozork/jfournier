@@ -7,7 +7,7 @@ html(lang='fr')
 
     include /includes/head
 
-    body(onload = 'resizeFun(); toggleHeaderDropdown()', onscroll = 'updateHeaderFromScroll()')
+    body
 
         #page-container
 
@@ -30,19 +30,6 @@ html(lang='fr')
                     .slide
                         img(src='img/slider/slider_enligne.jpg', alt='Thérapie en ligne')
                         span.slide-caption Thérapie en ligne
-                script.
-                    $("#images-container").slick({
-                        arrows: true,
-                        prevArrow: '<button class="slide-arrow prev-arrow">&lt;</button>',
-                        nextArrow: '<button class="slide-arrow next-arrow">&gt;</button>',
-                        centerMode: true,
-                        slidesToShow: 1,
-                        variableWidth: true
-                    });
-                    function resizeFun() {
-                        $("#images-container").width(document.body.clientWidth);
-                    }
-                    $(window).resize(resizeFun).load(resizeFun);
 
                 #body-container
 
