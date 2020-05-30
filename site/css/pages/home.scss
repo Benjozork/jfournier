@@ -54,14 +54,22 @@
     width: 225px;
 }
 
-#signature {
-    width: 12.5em;
+#tab-1 {
+    p:last-of-type {
+        display: flex;
+        flex-direction: column;
+        @media ($breakpoint-tablet) {
+            flex-direction: row;
+        }
+        justify-content: space-between;
 
-    vertical-align: top;
+        #signature {
+            width: 12.5em;
 
-    position: relative;
-    left:     4em;
-    bottom:   .75em;
+            align-self: flex-end;
+        }
+    }
+
 }
 
 #sidebar-container {
